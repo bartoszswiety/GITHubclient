@@ -16,13 +16,13 @@ public enum GitTarget
 
 extension GitTarget
 {
-    public var baseURL: String { return "https://api.github.com/"; }
+    public var baseURL: String { return "api.github.com/"; }
 
     public var path: String {
         switch self
         {
         case let .list(page):
-            return ""
+            return "search/repositories?q=language:swift&sort=stars&order=desc&page=" + String(page)
         }
     }
 
@@ -33,6 +33,18 @@ extension GitTarget
 
     public var request: URLRequest
     {
-        return req
+        var url = URLComponents()
+        url.scheme = "https"
+        url.host = self.baseURL
+        url.path = self.path
+        var request = URLRequest(url: url.url!)
+        request.httpMethod = self.method
+        let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
+        //        request.allHTTPHeaderFields =
+
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+        request.setValue("Awesome-Octocat-App", forHTTPHeaderField: "User-Agent")
+        return request
     }
 }
