@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// API - Manager for connection with API and all data managment
 public class API {
 // MARK: - Preporties
     public static var shared: API = API()
