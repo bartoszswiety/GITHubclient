@@ -10,6 +10,7 @@ import Foundation
 
 public enum GitTarget {
     case list(page: Int)
+    case contributors(path: String)
 }
 
 extension GitTarget {
@@ -19,6 +20,8 @@ extension GitTarget {
         switch self {
         case .list:
             return "/search/repositories"
+        case let .contributors(path):
+            return "/repos/" + path
         }
     }
 
@@ -26,6 +29,8 @@ extension GitTarget {
         switch self {
         case let .list(page):
             return "q=language:swift&sort=stars&order=desc&per_page=25&page=" + String(page)
+        case .contributors:
+            return ""
         }
     }
 

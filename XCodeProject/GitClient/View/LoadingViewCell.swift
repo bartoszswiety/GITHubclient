@@ -9,12 +9,9 @@
 import Foundation
 import UIKit
 
-public class LoadingViewCell: UITableViewCell
-{
-
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    public func startLoading()
-    {
+public class LoadingViewCell: UITableViewCell {
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    public func startLoading() {
         loadingIndicator.startAnimating()
     }
 }

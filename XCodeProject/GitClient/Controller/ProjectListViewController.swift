@@ -47,49 +47,47 @@ extension ProjectListViewController {
     // MARK: -TableViewController
 
     public override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        if(!loading)
-        {
+        if !loading {
             return projects.count
-        }
-        else
-        {
+        } else {
             return projects.count + 1
         }
     }
 
     public override func tableView(_: UITableView, cellForRowAt index: IndexPath) -> UITableViewCell {
-        if(index.row < projects.count)
-        {
+        if index.row < projects.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectViewCell") as! ProjectViewCell
             cell.setProject(project: projects[index.row])
             return cell
-        }
-        else
-        {
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingViewCell") as! LoadingViewCell
             cell.startLoading()
             return cell
         }
-
-
     }
 
+    public override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "ProjectViewController") as! ProjectViewController
 
-    public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard indexPath.row < projects.count
+        else {
+            return
+        }
 
+        navigationController?.pushViewController(vc, animated: true)
+        vc.project = projects[indexPath.row]
+    }
+
+    public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate _: Bool) {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
 //        print(currentOffset)
 
-        if(!loading)
-        {
+        if !loading {
             if maximumOffset - currentOffset <= 70.0 {
-                self.loadProjects()
+                loadProjects()
             }
         }
     }
-
 }
-
-
