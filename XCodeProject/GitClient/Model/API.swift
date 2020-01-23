@@ -32,6 +32,4 @@ extension API {
 
         task.resume()
     }
-
 }
-

@@ -12,7 +12,7 @@ import UIKit
 public class ProjectViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
 
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet var detailLabel: UILabel!
 
     func setProject(project: GitProject) {
         if let name: String = project.name {

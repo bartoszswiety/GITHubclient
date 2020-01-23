@@ -25,7 +25,7 @@
 		D18E5CC723D9F5010064A822 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CC623D9F5010064A822 /* ProjectViewController.swift */; };
 		D18E5CCB23D9FEEE0064A822 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCA23D9FEEE0064A822 /* ProjectViewCell.swift */; };
 		D18E5CCD23D9FF0A0064A822 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCC23D9FF0A0064A822 /* Users.swift */; };
-		D1F51B8823D9DB2D00D3C7CF /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8723D9DB2D00D3C7CF /* UserList.swift */; };
+		D18E5CCF23DA14420064A822 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCE23DA14420064A822 /* UserViewCell.swift */; };
 		D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,7 @@
 		D18E5CC623D9F5010064A822 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		D18E5CCA23D9FEEE0064A822 /* ProjectViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
 		D18E5CCC23D9FF0A0064A822 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		D1F51B8723D9DB2D00D3C7CF /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		D18E5CCE23DA14420064A822 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +197,7 @@
 			children = (
 				D18E5CCA23D9FEEE0064A822 /* ProjectViewCell.swift */,
 				D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */,
-				D1F51B8723D9DB2D00D3C7CF /* UserList.swift */,
+				D18E5CCE23DA14420064A822 /* UserViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,13 +359,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F51B8823D9DB2D00D3C7CF /* UserList.swift in Sources */,
 				D10C55FA23D9C3BE00D745CA /* ProjectListViewController.swift in Sources */,
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D18E5CC723D9F5010064A822 /* ProjectViewController.swift in Sources */,
 				D18E5CCB23D9FEEE0064A822 /* ProjectViewCell.swift in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,
 				D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */,
+				D18E5CCF23DA14420064A822 /* UserViewCell.swift in Sources */,
 				D18E5CCD23D9FF0A0064A822 /* Users.swift in Sources */,
 				D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */,
 				D10A0ED123D9D4FB00BE1896 /* User.swift in Sources */,

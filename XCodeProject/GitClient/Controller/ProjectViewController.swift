@@ -24,7 +24,8 @@ public class ProjectViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet var tableView: UITableView!
 }
 
 extension ProjectViewController {
@@ -38,61 +39,38 @@ extension ProjectViewController {
         loadProjectContributors()
     }
 
-    func loadImages()
-    {
-        DispatchQueue.global().async {
-            if var project = self.project {
-                for var user in project.users
-                {
-                    do
-                    {
-                        let data = try Data(contentsOf: URL(string: user.avatar_url!)!)
-                        DispatchQueue.main.async {
-                            user.avatar = UIImage(data: data)
-                        }
-                    }
-                    catch
-                    {
-                        print("error while loading avatar")
-                    }
-                }
-            }
-        }
-    }
-
     func loadProjectContributors() {
-        if var project = self.project {
-            if let path = project.contributors_url?.components(separatedBy: "repos/")[1] {
-                API.shared.request(target: .contributors(path: path)) { data, _, _ in
+        if let path = self.project?.contributors_url?.components(separatedBy: "repos/")[1] {
+            API.shared.request(target: .contributors(path: path)) { data, _, _ in
 //                    print(String(data: data!, encoding: .utf8))
-                    do {
-
-                        let jsonDecoder = JSONDecoder()
-                        let users = try jsonDecoder.decode(GitUserList.self, from: data!) as [GitUser]
-                        project.users = users
-                        print(project.users.count)
-                        self.loadImages()
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let users = try jsonDecoder.decode(GitUserList.self, from: data!) as [GitUser]
+                    self.project?.contriubutors = users
+                    print(self.project?.contriubutors.count)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData(with: .fade)
                     }
-                    catch
-                    {
-                        print("error")
-                    }
+                } catch {
+                    print("error")
                 }
             }
         }
     }
 }
 
+extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return project?.contriubutors.count ?? 0
+    }
 
-extension ProjectViewController: UITableViewDelegate, UITableViewDataSource
-{
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+    public func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return 100
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserViewCell") as! UserViewCell
+        cell.setUser(user: project!.contriubutors[indexPath.row])
+        return cell
     }
-
-
 }
