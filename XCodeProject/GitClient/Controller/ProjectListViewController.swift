@@ -13,7 +13,8 @@ class ProjectListViewController: UITableViewController {
     // MARK: -Property
 
     var projects: [GitProject] = []
-    var actualPage = 0
+    var actualPage = 1
+    var loading = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +22,18 @@ class ProjectListViewController: UITableViewController {
     }
 
     func loadProjects(page _: Int = 0) {
-        API.shared.request(target: .list(page: 0)) { data, _, _ in
+        loading = true
+        API.shared.request(target: .list(page: actualPage)) { data, _, _ in
             do {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(GitProjectsResponse.self, from: data!)
                 if let items = response.items {
-                    self.projects.insert(contentsOf: items, at: 0)
+                    self.projects.insert(contentsOf: items, at: self.projects.count)
 
                     DispatchQueue.main.async {
                         self.tableView.reloadData(with: .fade)
+                        self.loading = false
+                        self.actualPage += 1
                     }
                 }
             } catch {
@@ -43,24 +47,46 @@ extension ProjectListViewController {
     // MARK: -TableViewController
 
     public override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return projects.count
+        if(!loading)
+        {
+            return projects.count
+        }
+        else
+        {
+            return projects.count + 1
+        }
     }
 
     public override func tableView(_: UITableView, cellForRowAt index: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectViewCell") as! ProjectViewCell
-        cell.setProject(project: projects[index.row])
-        return cell
+        if(index.row < projects.count)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectViewCell") as! ProjectViewCell
+            cell.setProject(project: projects[index.row])
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingViewCell") as! LoadingViewCell
+            cell.startLoading()
+            return cell
+        }
+
+
     }
 
+
     public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // UITableView only moves in one direction, y axis
+
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
-        print(currentOffset)
-        // Change 10.0 to adjust the distance from bottom
-        if maximumOffset - currentOffset <= 10.0 {
-            self.loadProjects()
+//        print(currentOffset)
+
+        if(!loading)
+        {
+            if maximumOffset - currentOffset <= 70.0 {
+                self.loadProjects()
+            }
         }
     }
 

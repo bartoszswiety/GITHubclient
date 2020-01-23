@@ -25,7 +25,7 @@ extension GitTarget {
     public var query: String {
         switch self {
         case let .list(page):
-            return "q=language:swift&sort=stars&order=desc&per_page=1page=" + String(page)
+            return "q=language:swift&sort=stars&order=desc&per_page=25&page=" + String(page)
         }
     }
 
@@ -39,7 +39,7 @@ extension GitTarget {
         url.host = baseURL
         url.path = path
         url.query = query
-
+        print(url)
         if let url = url.url {
             var request = URLRequest(url: url)
             request.httpMethod = method

@@ -18,6 +18,7 @@
 		D10C560523D9C3C100D745CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10C560323D9C3C100D745CA /* LaunchScreen.storyboard */; };
 		D10C561023D9C3C100D745CA /* GitClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C560F23D9C3C100D745CA /* GitClientTests.swift */; };
 		D10C561B23D9C3C200D745CA /* GitClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C561A23D9C3C200D745CA /* GitClientUITests.swift */; };
+		D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */; };
 		D14F082323D9C519001134A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082223D9C519001134A1 /* API.swift */; };
 		D14F082523D9C570001134A1 /* GitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082423D9C570001134A1 /* GitTarget.swift */; };
 		D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */; };
@@ -60,6 +61,7 @@
 		D10C561623D9C3C200D745CA /* GitClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10C561A23D9C3C200D745CA /* GitClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitClientUITests.swift; sourceTree = "<group>"; };
 		D10C561C23D9C3C200D745CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
 		D14F082223D9C519001134A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D14F082423D9C570001134A1 /* GitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTarget.swift; sourceTree = "<group>"; };
 		D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitProjectsResponse.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		D10C562923D9C46600D745CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */,
 				D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */,
 			);
 			path = View;
@@ -352,6 +355,7 @@
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,
 				D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */,
+				D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */,
 				D10A0ED123D9D4FB00BE1896 /* Owner.swift in Sources */,
 				D10A0ED023D9D4FB00BE1896 /* GitProject.swift in Sources */,
 				D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */,
