@@ -14,7 +14,7 @@ class UserViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
 
     func loadImage(user: GitUser) {
-        let url = URL(string: user.avatar_url!)
+        let url = URL(string: user.avatar_url)
 
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!) // make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
@@ -27,7 +27,7 @@ class UserViewCell: UITableViewCell {
     }
 
     public func setUser(user: GitUser) {
-        nameLabel.text = "@" + user.login!
+        nameLabel.text = "@" + user.login
         photoImageView.image = nil
         if user.avatar != nil {
             photoImageView.image = user.avatar

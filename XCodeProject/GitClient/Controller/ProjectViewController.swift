@@ -32,22 +32,22 @@ extension ProjectViewController {
     func setProjectDetails() {
         if let project = self.project {
             projectNameLabel.text = project.name
-            projectSizeLabel.text = project.size?.description
-            projectForksLabel.text = project.forks?.description
-            projectStargrazersLabel.text = project.stargazers_count?.description
+            projectSizeLabel.text = project.size.description
+            projectForksLabel.text = project.forks.description
+            projectStargrazersLabel.text = project.stargazers_count.description
         }
         loadProjectContributors()
     }
 
     func loadProjectContributors() {
-        if let path = self.project?.contributors_url?.components(separatedBy: "repos/")[1] {
+        if let path = self.project?.contributors_url.components(separatedBy: "repos/")[1] {
             API.shared.request(target: .contributors(path: path)) { data, _, _ in
 //                    print(String(data: data!, encoding: .utf8))
                 do {
                     let jsonDecoder = JSONDecoder()
                     let users = try jsonDecoder.decode(GitUserList.self, from: data!) as [GitUser]
                     self.project?.contriubutors = users
-                    print(self.project?.contriubutors.count)
+//                    print(self.project?.contriubutors.count)
                     DispatchQueue.main.async {
                         self.tableView.reloadData(with: .fade)
                     }
@@ -75,7 +75,7 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let url = URL(string: project!.contriubutors[indexPath.row].html_url!) {
+        if let url = URL(string: project.contriubutors[indexPath.row].html_url) {
             UIApplication.shared.openURL(url)
         }
     }

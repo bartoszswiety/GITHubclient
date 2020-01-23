@@ -23,13 +23,19 @@ extension API {
     func request(target: GitTarget, callback: @escaping Callback) {
         let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
 
-        var task = urlSession.dataTask(with: target.request!) {
+        let task = urlSession.dataTask(with: target.request!) {
             data, response, error in
 
-            callback(data, response, error)
-            return
-        }
+            let status = (response as! HTTPURLResponse).statusCode
 
+            if status == 200 { // OK
+                callback(data, response, error)
+                return
+            } else { // ERROR
+                callback(nil, nil, error)
+                return
+            }
+        }
         task.resume()
     }
 }
