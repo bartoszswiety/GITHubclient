@@ -16,6 +16,7 @@
 		D10C560523D9C3C100D745CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10C560323D9C3C100D745CA /* LaunchScreen.storyboard */; };
 		D10C561023D9C3C100D745CA /* GitClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C560F23D9C3C100D745CA /* GitClientTests.swift */; };
 		D10C561B23D9C3C200D745CA /* GitClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C561A23D9C3C200D745CA /* GitClientUITests.swift */; };
+		D14F082323D9C519001134A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082223D9C519001134A1 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D10C561623D9C3C200D745CA /* GitClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10C561A23D9C3C200D745CA /* GitClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitClientUITests.swift; sourceTree = "<group>"; };
 		D10C561C23D9C3C200D745CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D14F082223D9C519001134A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		D10C562823D9C45A00D745CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D14F082223D9C519001134A1 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D10C55F623D9C3BE00D745CA /* AppDelegate.swift in Sources */,
 				D10C55F823D9C3BE00D745CA /* SceneDelegate.swift in Sources */,
+				D14F082323D9C519001134A1 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
