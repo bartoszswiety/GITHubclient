@@ -25,10 +25,9 @@ extension GitTarget {
     public var query: String {
         switch self {
         case let .list(page):
-            return "q=language:swift&sort=stars&order=desc&per_page=1page=" + String(page)
+            return "q=language:swift&sort=stars&order=desc&per_page=25&page=" + String(page)
         }
     }
-
 
     public var method: String {
         return "GET"
@@ -40,18 +39,15 @@ extension GitTarget {
         url.host = baseURL
         url.path = path
         url.query = query
-
-        if let url = url.url
-        {
+        print(url)
+        if let url = url.url {
             var request = URLRequest(url: url)
-            request.httpMethod = self.method
+            request.httpMethod = method
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
             request.setValue("Awesome-Octocat-App", forHTTPHeaderField: "User-Agent")
             return request
-        }
-        else
-        {
+        } else {
             print("Error: no url")
         }
         return nil
