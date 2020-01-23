@@ -4,22 +4,27 @@
 //
 //  Created by Bartosz Swiety on 23/01/2020.
 //  Copyright © 2020 Bartosz Swiety. All rights reserved.
+//  http://github.com/bartoszswiety/GITHubclient
 //
 
 import UIKit
 
 /// Lists of Projects
 class ProjectListViewController: UITableViewController {
-    // MARK: -Property
+    // MARK: -Preporites
 
     var projects: [GitProject] = []
     var actualPage = 1
     var loading = false
 
+    // MARK: -Inializer
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadProjects()
     }
+
+    // MARK: -Load projects from git
 
     func loadProjects(page _: Int = 0) {
         loading = true
@@ -35,7 +40,6 @@ class ProjectListViewController: UITableViewController {
                     self.loading = false
                     self.actualPage += 1
                 }
-
             } catch {
                 print("error while loading projects")
             }
@@ -78,11 +82,10 @@ extension ProjectListViewController {
         vc.project = projects[indexPath.row]
     }
 
+    // Autoload
     public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate _: Bool) {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-
-//        print(currentOffset)
 
         if !loading {
             if maximumOffset - currentOffset <= 70.0 {

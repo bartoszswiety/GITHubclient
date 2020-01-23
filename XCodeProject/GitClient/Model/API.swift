@@ -4,6 +4,7 @@
 //
 //  Created by Bartosz Swiety on 23/01/2020.
 //  Copyright © 2020 Bartosz Swiety. All rights reserved.
+//  http://github.com/bartoszswiety/GITHubclient
 //
 
 import Foundation
@@ -28,6 +29,7 @@ extension API {
 
             let status = (response as! HTTPURLResponse).statusCode
 
+            /// We check status codes and allow only 200
             if status == 200 { // OK
                 callback(data, response, error)
                 return
@@ -35,6 +37,7 @@ extension API {
                 callback(nil, nil, error)
                 return
             }
+            // TODO: Better Error handling is required.
         }
         task.resume()
     }

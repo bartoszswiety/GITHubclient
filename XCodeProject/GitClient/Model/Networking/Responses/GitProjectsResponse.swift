@@ -1,5 +1,6 @@
 /*
  Copyright (c) 2020 Swift Models Generated from JSON powered by http://www.json4swift.com
+ //  http://github.com/bartoszswiety/GITHubclient
  */
 
 import Foundation

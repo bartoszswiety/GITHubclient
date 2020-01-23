@@ -4,31 +4,36 @@
 //
 //  Created by Bartosz Swiety on 23/01/2020.
 //  Copyright © 2020 Bartosz Swiety. All rights reserved.
+//  http://github.com/bartoszswiety/GITHubclient
 //
 
 import Foundation
 import UIKit
 
 public class ProjectViewController: UIViewController {
-    @IBOutlet var projectNameLabel: UILabel!
+    // MARK: -Preporites
 
+    @IBOutlet var projectNameLabel: UILabel!
     @IBOutlet var projectSizeLabel: UILabel!
     @IBOutlet var projectForksLabel: UILabel!
-
     @IBOutlet var projectStargrazersLabel: UILabel!
 
+    @IBOutlet var tableView: UITableView!
+
+    // GitProject displayed in overview
     var project: GitProject?
+
+    // MARK: -Initalizer
 
     public override func viewDidLoad() {
         setProjectDetails()
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    @IBOutlet var tableView: UITableView!
 }
 
 extension ProjectViewController {
+    /// Displays attrubities on view
     func setProjectDetails() {
         if let project = self.project {
             projectNameLabel.text = project.name
@@ -39,15 +44,14 @@ extension ProjectViewController {
         loadProjectContributors()
     }
 
+    /// Tries to load contributors
     func loadProjectContributors() {
         if let path = self.project?.contributors_url.components(separatedBy: "repos/")[1] {
             API.shared.request(target: .contributors(path: path)) { data, _, _ in
-//                    print(String(data: data!, encoding: .utf8))
                 do {
                     let jsonDecoder = JSONDecoder()
                     let users = try jsonDecoder.decode(GitUserList.self, from: data!) as [GitUser]
                     self.project?.contriubutors = users
-//                    print(self.project?.contriubutors.count)
                     DispatchQueue.main.async {
                         self.tableView.reloadData(with: .fade)
                     }
@@ -58,6 +62,8 @@ extension ProjectViewController {
         }
     }
 }
+
+// MARK: -TableView
 
 extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -75,7 +81,8 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let url = URL(string: project.contriubutors[indexPath.row].html_url) {
+        // feat - open url
+        if let url = URL(string: project!.contriubutors[indexPath.row].html_url) {
             UIApplication.shared.openURL(url)
         }
     }
