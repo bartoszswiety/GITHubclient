@@ -21,6 +21,7 @@
 		D14F082323D9C519001134A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082223D9C519001134A1 /* API.swift */; };
 		D14F082523D9C570001134A1 /* GitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082423D9C570001134A1 /* GitTarget.swift */; };
 		D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */; };
+		D1F51B8823D9DB2D00D3C7CF /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D14F082223D9C519001134A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D14F082423D9C570001134A1 /* GitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTarget.swift; sourceTree = "<group>"; };
 		D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitProjectsResponse.swift; sourceTree = "<group>"; };
+		D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		D10C562923D9C46600D745CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F51B8823D9DB2D00D3C7CF /* ProjectViewCell.swift in Sources */,
 				D10C55FA23D9C3BE00D745CA /* ProjectListViewController.swift in Sources */,
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,

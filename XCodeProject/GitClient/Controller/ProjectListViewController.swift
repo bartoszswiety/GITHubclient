@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProjectListViewController: UITableViewController {
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         API.shared.request(target: .list(page: 0)) { (data, response, error) in
@@ -21,5 +24,17 @@ class ViewController: UIViewController {
                 print("error while loading projects")
             }
         }
+    }
+}
+
+extension ProjectListViewController
+{
+    override public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return 2
+    }
+
+    override public func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectViewCell") as! ProjectViewCell
+        return cell
     }
 }
