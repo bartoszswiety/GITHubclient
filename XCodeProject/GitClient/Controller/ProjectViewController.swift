@@ -73,4 +73,10 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setUser(user: project!.contriubutors[indexPath.row])
         return cell
     }
+
+    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = URL(string: project!.contriubutors[indexPath.row].html_url!) {
+            UIApplication.shared.openURL(url)
+        }
+    }
 }
