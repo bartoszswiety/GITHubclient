@@ -101,9 +101,10 @@
 		D10C55F423D9C3BE00D745CA /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
-				D10C55F523D9C3BE00D745CA /* AppDelegate.swift */,
-				D10C55F723D9C3BE00D745CA /* SceneDelegate.swift */,
-				D10C55F923D9C3BE00D745CA /* ViewController.swift */,
+				D10C562B23D9C48200D745CA /* Delegate */,
+				D10C562A23D9C46F00D745CA /* Controller */,
+				D10C562923D9C46600D745CA /* View */,
+				D10C562823D9C45A00D745CA /* Model */,
 				D10C55FB23D9C3BE00D745CA /* Main.storyboard */,
 				D10C560123D9C3C100D745CA /* Assets.xcassets */,
 				D10C560323D9C3C100D745CA /* LaunchScreen.storyboard */,
@@ -129,6 +130,37 @@
 				D10C561C23D9C3C200D745CA /* Info.plist */,
 			);
 			path = GitClientUITests;
+			sourceTree = "<group>";
+		};
+		D10C562823D9C45A00D745CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D10C562923D9C46600D745CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D10C562A23D9C46F00D745CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D10C55F923D9C3BE00D745CA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D10C562B23D9C48200D745CA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D10C55F523D9C3BE00D745CA /* AppDelegate.swift */,
+				D10C55F723D9C3BE00D745CA /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
