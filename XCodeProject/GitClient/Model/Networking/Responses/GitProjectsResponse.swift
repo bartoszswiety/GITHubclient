@@ -1,6 +1,6 @@
 /*
-Copyright (c) 2020 Swift Models Generated from JSON powered by http://www.json4swift.com
-*/
+ Copyright (c) 2020 Swift Models Generated from JSON powered by http://www.json4swift.com
+ */
 
 import Foundation
 struct GitProjectsResponse: Codable {
@@ -9,10 +9,9 @@ struct GitProjectsResponse: Codable {
     let items: [GitProject]?
 
     enum CodingKeys: String, CodingKey {
-
-        case total_count = "total_count"
-        case incomplete_results = "incomplete_results"
-        case items = "items"
+        case total_count
+        case incomplete_results
+        case items
     }
 
     init(from decoder: Decoder) throws {
@@ -21,5 +20,4 @@ struct GitProjectsResponse: Codable {
         incomplete_results = try values.decodeIfPresent(Bool.self, forKey: .incomplete_results)
         items = try values.decodeIfPresent([GitProject].self, forKey: .items)
     }
-
 }

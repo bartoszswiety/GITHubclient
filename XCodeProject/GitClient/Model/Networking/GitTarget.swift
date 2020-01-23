@@ -29,7 +29,6 @@ extension GitTarget {
         }
     }
 
-
     public var method: String {
         return "GET"
     }
@@ -41,17 +40,14 @@ extension GitTarget {
         url.path = path
         url.query = query
 
-        if let url = url.url
-        {
+        if let url = url.url {
             var request = URLRequest(url: url)
-            request.httpMethod = self.method
+            request.httpMethod = method
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
             request.setValue("Awesome-Octocat-App", forHTTPHeaderField: "User-Agent")
             return request
-        }
-        else
-        {
+        } else {
             print("Error: no url")
         }
         return nil

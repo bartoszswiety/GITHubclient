@@ -9,7 +9,4 @@
 import Foundation
 import UIKit
 
-public class ProjectViewCell: UITableViewCell
-{
-
-}
+public class ProjectViewCell: UITableViewCell {}
