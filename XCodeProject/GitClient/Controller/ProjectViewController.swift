@@ -46,7 +46,7 @@ extension ProjectViewController {
 
     /// Tries to load contributors
     func loadProjectContributors() {
-        if let path = self.project?.contributors_url.components(separatedBy: "repos/")[1] {
+        if let path = self.project?.url.components(separatedBy: "repos/")[1] {
             API.shared.request(target: .contributors(path: path)) { data, _, _ in
                 do {
                     let jsonDecoder = JSONDecoder()
@@ -54,10 +54,28 @@ extension ProjectViewController {
                     self.project?.contriubutors = users
                     DispatchQueue.main.async {
                         self.tableView.reloadData(with: .fade)
+                        self.loadProjectStats(path: path)
                     }
                 } catch {
                     print("error")
                 }
+            }
+        }
+    }
+
+    func loadProjectStats(path: String)
+    {
+        API.shared.request(target: .stats(path: path)) { (data, response, error) in
+            do {
+                let jsonDecoder = JSONDecoder()
+                let stats = try jsonDecoder.decode(GitStatsResponseArray.self, from: data!) as [GitStats]
+//                print(stats[0])
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData(with: .fade)
+//                    self.loadProjectStats(path: path)
+//                }
+            } catch let error {
+                print(error)
             }
         }
     }
