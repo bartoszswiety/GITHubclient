@@ -8,14 +8,27 @@
 
 import Foundation
 
-
 /// API - Manager for connection with API and all data managment
 public class API {
-// MARK: - Preporties
+    // MARK: - Preporties
+
     public static var shared: API = API()
 }
 
-extension API
-{
-    //MARK: -Request
+extension API {
+    // MARK: -Request
+
+    func request(target: GitTarget) {
+        let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
+
+        var task = urlSession.dataTask(with: target.request!)
+        {
+            (data, response, error) in
+            print(String(data: data!, encoding: .utf8))
+            print(response)
+
+        }
+
+        task.resume()
+    }
 }

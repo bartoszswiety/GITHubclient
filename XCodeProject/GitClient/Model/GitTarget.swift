@@ -8,43 +8,52 @@
 
 import Foundation
 
-
-public enum GitTarget
-{
+public enum GitTarget {
     case list(page: Int)
 }
 
-extension GitTarget
-{
-    public var baseURL: String { return "api.github.com/"; }
+extension GitTarget {
+    public var baseURL: String { return "api.github.com" }
 
     public var path: String {
-        switch self
-        {
-        case let .list(page):
-            return "search/repositories?q=language:swift&sort=stars&order=desc&page=" + String(page)
+        switch self {
+        case .list:
+            return "/search/repositories"
         }
     }
 
-    public var method: String
-    {
+    public var query: String {
+        switch self {
+        case let .list(page):
+            return "q=language:swift&sort=stars&order=desc&page=" + String(page)
+        }
+    }
+
+
+    public var method: String {
         return "GET"
     }
 
-    public var request: URLRequest
-    {
+    public var request: URLRequest? {
         var url = URLComponents()
         url.scheme = "https"
-        url.host = self.baseURL
-        url.path = self.path
-        var request = URLRequest(url: url.url!)
-        request.httpMethod = self.method
-        let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
-        //        request.allHTTPHeaderFields =
+        url.host = baseURL
+        url.path = path
+        url.query = query
 
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
-        request.setValue("Awesome-Octocat-App", forHTTPHeaderField: "User-Agent")
-        return request
+        if let url = url.url
+        {
+            var request = URLRequest(url: url)
+            request.httpMethod = self.method
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+            request.setValue("Awesome-Octocat-App", forHTTPHeaderField: "User-Agent")
+            return request
+        }
+        else
+        {
+            print("Error: no url")
+        }
+        return nil
     }
 }
