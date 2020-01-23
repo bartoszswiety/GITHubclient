@@ -178,59 +178,77 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-ki-PGj" userLabel="Stats">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wQL-ki-PGj" userLabel="Stats">
                                                     <rect key="frame" x="123" y="108" width="271" height="23"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-C6-XhY" userLabel="Forks">
-                                                            <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="23"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-C6-XhY" userLabel="Commits">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="23"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1C-PF-fqL" userLabel="TItle">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="14.333333333333334"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1C-PF-fqL" userLabel="TItle">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="14.333333333333334"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Z-B9-sYn" userLabel="Value">
-                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="33.666666666666664" height="8.6666666666666643"/>
+                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="90.333333333333329" height="8.6666666666666643"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="d4Z-B9-sYn" secondAttribute="trailing" id="DJl-mp-eYg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="E1C-PF-fqL" secondAttribute="trailing" id="hlr-h2-Lm5"/>
+                                                                <constraint firstItem="E1C-PF-fqL" firstAttribute="leading" secondItem="DSE-C6-XhY" secondAttribute="leading" id="p2M-Yg-dmQ"/>
+                                                                <constraint firstItem="d4Z-B9-sYn" firstAttribute="leading" secondItem="DSE-C6-XhY" secondAttribute="leading" id="zTu-mC-Mr2"/>
+                                                            </constraints>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QkF-Tp-zEy" userLabel="Forks">
-                                                            <rect key="frame" x="118.66666666666667" y="0.0" width="33.666666666666671" height="23"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-0m-6R4" userLabel="Deletions">
+                                                            <rect key="frame" x="90.333333333333343" y="0.0" width="90.333333333333343" height="23"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5e-SD-1f6" userLabel="TItle">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="14.333333333333334"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deletions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47f-2l-HQN" userLabel="TItle">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="14.333333333333334"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS5-fX-5KN" userLabel="Value">
-                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="33.666666666666664" height="8.6666666666666643"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-rQ-Vcj" userLabel="Value">
+                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="90.333333333333329" height="8.6666666666666643"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="IuP-rQ-Vcj" secondAttribute="trailing" id="0z3-Ro-puw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="47f-2l-HQN" secondAttribute="trailing" id="GAL-no-qwu"/>
+                                                                <constraint firstItem="IuP-rQ-Vcj" firstAttribute="leading" secondItem="K9F-0m-6R4" secondAttribute="leading" id="OgQ-yd-VSM"/>
+                                                                <constraint firstItem="47f-2l-HQN" firstAttribute="leading" secondItem="K9F-0m-6R4" secondAttribute="leading" id="rJM-O8-u3P"/>
+                                                            </constraints>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bWT-OE-Vzn" userLabel="Forks">
-                                                            <rect key="frame" x="237.33333333333331" y="0.0" width="33.666666666666686" height="23"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4kD-4J-M49" userLabel="Addtions">
+                                                            <rect key="frame" x="180.66666666666669" y="0.0" width="90.333333333333314" height="23"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6A-6Y-raJ" userLabel="TItle">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33.666666666666664" height="14.333333333333334"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTs-sY-qC2" userLabel="TItle">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="14.333333333333334"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-9t-fas" userLabel="Value">
-                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="33.666666666666664" height="8.6666666666666643"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67g-Sf-yL0" userLabel="Value">
+                                                                    <rect key="frame" x="0.0" y="14.333333333333329" width="90.333333333333329" height="8.6666666666666643"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="YTs-sY-qC2" firstAttribute="leading" secondItem="4kD-4J-M49" secondAttribute="leading" id="9Yu-9w-Bu0"/>
+                                                                <constraint firstAttribute="trailing" secondItem="YTs-sY-qC2" secondAttribute="trailing" id="Tsj-kq-eGF"/>
+                                                                <constraint firstItem="67g-Sf-yL0" firstAttribute="leading" secondItem="4kD-4J-M49" secondAttribute="leading" id="ZxF-Zm-DU8"/>
+                                                                <constraint firstAttribute="trailing" secondItem="67g-Sf-yL0" secondAttribute="trailing" id="bh2-LO-aOk"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
@@ -245,9 +263,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="asC-fC-onf" secondAttribute="trailing" constant="8" id="Pi3-Sa-eCp"/>
                                                 <constraint firstItem="asC-fC-onf" firstAttribute="centerY" secondItem="lpr-Mr-tNh" secondAttribute="centerY" id="Vzp-8o-Jnr"/>
                                                 <constraint firstItem="asC-fC-onf" firstAttribute="top" secondItem="gkL-ag-iQ0" secondAttribute="topMargin" constant="20" id="W2F-ap-qcm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wQL-ki-PGj" secondAttribute="bottom" constant="5" id="dt6-2K-ydP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="additionsCount" destination="67g-Sf-yL0" id="DcM-os-ixa"/>
+                                            <outlet property="commitsCount" destination="d4Z-B9-sYn" id="MQU-Ew-RYU"/>
+                                            <outlet property="deletionsCount" destination="IuP-rQ-Vcj" id="sgg-md-HOg"/>
                                             <outlet property="nameLabel" destination="asC-fC-onf" id="JHN-Nr-7aZ"/>
                                             <outlet property="photoImageView" destination="lpr-Mr-tNh" id="EZa-TL-g4d"/>
                                         </connections>

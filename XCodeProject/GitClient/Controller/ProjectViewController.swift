@@ -99,7 +99,7 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
