@@ -22,6 +22,7 @@
 		D14F082523D9C570001134A1 /* GitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082423D9C570001134A1 /* GitTarget.swift */; };
 		D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */; };
 		D1F51B8823D9DB2D00D3C7CF /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */; };
+		D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D14F082423D9C570001134A1 /* GitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTarget.swift; sourceTree = "<group>"; };
 		D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitProjectsResponse.swift; sourceTree = "<group>"; };
 		D1F51B8723D9DB2D00D3C7CF /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
+		D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		D10C55F423D9C3BE00D745CA /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				D1F51B8923D9E06500D3C7CF /* Helpers */,
 				D10C562B23D9C48200D745CA /* Delegate */,
 				D10C562A23D9C46F00D745CA /* Controller */,
 				D10C562923D9C46600D745CA /* View */,
@@ -203,6 +206,14 @@
 				D10C55F723D9C3BE00D745CA /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		D1F51B8923D9E06500D3C7CF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				D10C55FA23D9C3BE00D745CA /* ProjectListViewController.swift in Sources */,
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,
+				D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */,
 				D10A0ED123D9D4FB00BE1896 /* Owner.swift in Sources */,
 				D10A0ED023D9D4FB00BE1896 /* GitProject.swift in Sources */,
 				D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */,
