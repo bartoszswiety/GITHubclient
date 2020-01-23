@@ -11,22 +11,23 @@ import Foundation
 /// API - Manager for connection with API and all data managment
 public class API {
     // MARK: - Preporties
-
     public static var shared: API = API()
 }
 
 extension API {
-    // MARK: -Request
 
-    func request(target: GitTarget) {
+    public typealias Callback = (Data?, URLResponse?, Error?) -> Void
+
+    // MARK: -Request
+    func request(target: GitTarget, callback: @escaping Callback) {
         let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
 
         var task = urlSession.dataTask(with: target.request!)
         {
             (data, response, error) in
-            print(String(data: data!, encoding: .utf8))
-            print(response)
 
+            callback(data, response, error)
+            return
         }
 
         task.resume()
