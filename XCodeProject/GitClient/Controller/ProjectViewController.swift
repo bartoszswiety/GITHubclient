@@ -63,18 +63,28 @@ extension ProjectViewController {
         }
     }
 
-    func loadProjectStats(path: String)
-    {
-        API.shared.request(target: .stats(path: path)) { (data, response, error) in
+    func loadProjectStats(path: String) {
+        API.shared.request(target: .stats(path: path)) { data, _, error in
             do {
                 let jsonDecoder = JSONDecoder()
-                let stats = try jsonDecoder.decode(GitStatsResponseArray.self, from: data!) as [GitStats]
-//                print(stats[0])
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData(with: .fade)
-//                    self.loadProjectStats(path: path)
-//                }
-            } catch let error {
+                let stats = try jsonDecoder.decode(GitStatsArray.self, from: data!) as [GitStats]
+                DispatchQueue.main.async {
+                    for user in self.project!.contriubutors {
+                        let stat = stats.first { (stats) -> Bool in
+                            stats.author?.id == user.id
+                        }
+
+                        if let weeks = stat?.weeks {
+                            for week in weeks {
+                                user.commitsCount += week.c ?? 0
+                                user.additionsCount += week.a ?? 0
+                                user.deletionsCount += week.d ?? 0
+                            }
+                        }
+                    }
+                    self.tableView.reloadData(with: .fade)
+                }
+            } catch {
                 print(error)
             }
         }
