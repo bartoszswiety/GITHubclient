@@ -24,8 +24,9 @@
 		D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */; };
 		D18E5CC723D9F5010064A822 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CC623D9F5010064A822 /* ProjectViewController.swift */; };
 		D18E5CCB23D9FEEE0064A822 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCA23D9FEEE0064A822 /* ProjectViewCell.swift */; };
-		D18E5CCD23D9FF0A0064A822 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCC23D9FF0A0064A822 /* Users.swift */; };
 		D18E5CCF23DA14420064A822 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E5CCE23DA14420064A822 /* UserViewCell.swift */; };
+		D1C3BB1C23DA392900F2009B /* GitStatsContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C3BB1923DA392900F2009B /* GitStatsContributions.swift */; };
+		D1C3BB1D23DA392900F2009B /* Weeks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C3BB1A23DA392900F2009B /* Weeks.swift */; };
 		D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +71,9 @@
 		D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitProjectsResponse.swift; sourceTree = "<group>"; };
 		D18E5CC623D9F5010064A822 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		D18E5CCA23D9FEEE0064A822 /* ProjectViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
-		D18E5CCC23D9FF0A0064A822 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		D18E5CCE23DA14420064A822 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
+		D1C3BB1923DA392900F2009B /* GitStatsContributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitStatsContributions.swift; sourceTree = "<group>"; };
+		D1C3BB1A23DA392900F2009B /* Weeks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weeks.swift; sourceTree = "<group>"; };
 		D1F51B8A23D9E07300D3C7CF /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		D10A0EC523D9CB2C00BE1896 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				D1C3BB1A23DA392900F2009B /* Weeks.swift */,
 				D10A0ECC23D9D4FB00BE1896 /* GitProject.swift */,
 				D10A0ECD23D9D4FB00BE1896 /* User.swift */,
 			);
@@ -121,8 +124,8 @@
 		D10A0ED323D9D83200BE1896 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				D1C3BB1923DA392900F2009B /* GitStatsContributions.swift */,
 				D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */,
-				D18E5CCC23D9FF0A0064A822 /* Users.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -364,13 +367,14 @@
 				D18E5CC723D9F5010064A822 /* ProjectViewController.swift in Sources */,
 				D18E5CCB23D9FEEE0064A822 /* ProjectViewCell.swift in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,
+				D1C3BB1C23DA392900F2009B /* GitStatsContributions.swift in Sources */,
 				D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */,
 				D18E5CCF23DA14420064A822 /* UserViewCell.swift in Sources */,
-				D18E5CCD23D9FF0A0064A822 /* Users.swift in Sources */,
 				D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */,
 				D10A0ED123D9D4FB00BE1896 /* User.swift in Sources */,
 				D10A0ED023D9D4FB00BE1896 /* GitProject.swift in Sources */,
 				D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */,
+				D1C3BB1D23DA392900F2009B /* Weeks.swift in Sources */,
 				D10C55F623D9C3BE00D745CA /* AppDelegate.swift in Sources */,
 				D10C55F823D9C3BE00D745CA /* SceneDelegate.swift in Sources */,
 				D14F082323D9C519001134A1 /* API.swift in Sources */,

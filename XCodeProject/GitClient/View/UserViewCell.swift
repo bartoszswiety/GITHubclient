@@ -13,6 +13,9 @@ import UIKit
 class UserViewCell: UITableViewCell {
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet weak var commitsCount: UILabel!
+    @IBOutlet weak var deletionsCount: UILabel!
+    @IBOutlet weak var additionsCount: UILabel!
 
     /// Downloads user image and displas on view.
     /// - Parameter user
@@ -32,6 +35,10 @@ class UserViewCell: UITableViewCell {
     public func setUser(user: GitUser) {
         nameLabel.text = "@" + user.login
         photoImageView.image = nil // Removes images from behind cells.
+
+        commitsCount.text = user.commitsCount.description
+        deletionsCount.text = user.deletionsCount.description
+        additionsCount.text = user.additionsCount.description
 
         if user.avatar != nil {
             photoImageView.image = user.avatar

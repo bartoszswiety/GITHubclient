@@ -46,7 +46,7 @@ extension ProjectViewController {
 
     /// Tries to load contributors
     func loadProjectContributors() {
-        if let path = self.project?.contributors_url.components(separatedBy: "repos/")[1] {
+        if let path = self.project?.url.components(separatedBy: "repos/")[1] {
             API.shared.request(target: .contributors(path: path)) { data, _, _ in
                 do {
                     let jsonDecoder = JSONDecoder()
@@ -54,10 +54,38 @@ extension ProjectViewController {
                     self.project?.contriubutors = users
                     DispatchQueue.main.async {
                         self.tableView.reloadData(with: .fade)
+                        self.loadProjectStats(path: path)
                     }
                 } catch {
                     print("error")
                 }
+            }
+        }
+    }
+
+    func loadProjectStats(path: String) {
+        API.shared.request(target: .stats(path: path)) { data, _, error in
+            do {
+                let jsonDecoder = JSONDecoder()
+                let stats = try jsonDecoder.decode(GitStatsArray.self, from: data!) as [GitStats]
+                DispatchQueue.main.async {
+                    for user in self.project!.contriubutors {
+                        let stat = stats.first { (stats) -> Bool in
+                            stats.author?.id == user.id
+                        }
+
+                        if let weeks = stat?.weeks {
+                            for week in weeks {
+                                user.commitsCount += week.c ?? 0
+                                user.additionsCount += week.a ?? 0
+                                user.deletionsCount += week.d ?? 0
+                            }
+                        }
+                    }
+                    self.tableView.reloadData(with: .fade)
+                }
+            } catch {
+                print(error)
             }
         }
     }
@@ -71,7 +99,7 @@ extension ProjectViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
