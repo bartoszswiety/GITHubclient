@@ -4,9 +4,9 @@
 
 import Foundation
 struct GitProjectsResponse: Codable {
-    let total_count: Int?
-    let incomplete_results: Bool?
-    let items: [GitProject]?
+    let total_count: Int
+    let incomplete_results: Bool
+    let items: [GitProject]
 
     enum CodingKeys: String, CodingKey {
         case total_count
@@ -16,8 +16,8 @@ struct GitProjectsResponse: Codable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        total_count = try values.decodeIfPresent(Int.self, forKey: .total_count)
-        incomplete_results = try values.decodeIfPresent(Bool.self, forKey: .incomplete_results)
-        items = try values.decodeIfPresent([GitProject].self, forKey: .items)
+        total_count = try values.decodeIfPresent(Int.self, forKey: .total_count) ?? 0
+        incomplete_results = try values.decodeIfPresent(Bool.self, forKey: .incomplete_results) ?? false
+        items = try values.decodeIfPresent([GitProject].self, forKey: .items) ?? []
     }
 }

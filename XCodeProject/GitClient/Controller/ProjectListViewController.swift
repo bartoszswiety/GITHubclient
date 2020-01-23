@@ -27,15 +27,15 @@ class ProjectListViewController: UITableViewController {
             do {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(GitProjectsResponse.self, from: data!)
-                if let items = response.items {
-                    self.projects.insert(contentsOf: items, at: self.projects.count)
 
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData(with: .fade)
-                        self.loading = false
-                        self.actualPage += 1
-                    }
+                self.projects.insert(contentsOf: response.items, at: self.projects.count)
+
+                DispatchQueue.main.async {
+                    self.tableView.reloadData(with: .fade)
+                    self.loading = false
+                    self.actualPage += 1
                 }
+
             } catch {
                 print("error while loading projects")
             }
