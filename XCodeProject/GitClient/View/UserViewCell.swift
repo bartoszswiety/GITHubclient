@@ -13,9 +13,9 @@ import UIKit
 class UserViewCell: UITableViewCell {
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet weak var commitsCount: UILabel!
-    @IBOutlet weak var deletionsCount: UILabel!
-    @IBOutlet weak var additionsCount: UILabel!
+    @IBOutlet var commitsCount: UILabel!
+    @IBOutlet var deletionsCount: UILabel!
+    @IBOutlet var additionsCount: UILabel!
 
     /// Downloads user image and displas on view.
     /// - Parameter user

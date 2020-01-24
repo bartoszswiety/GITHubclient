@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D10A0ED023D9D4FB00BE1896 /* GitProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A0ECC23D9D4FB00BE1896 /* GitProject.swift */; };
-		D10A0ED123D9D4FB00BE1896 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A0ECD23D9D4FB00BE1896 /* User.swift */; };
 		D10C55F623D9C3BE00D745CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C55F523D9C3BE00D745CA /* AppDelegate.swift */; };
 		D10C55F823D9C3BE00D745CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C55F723D9C3BE00D745CA /* SceneDelegate.swift */; };
 		D10C55FA23D9C3BE00D745CA /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C55F923D9C3BE00D745CA /* ProjectListViewController.swift */; };
@@ -19,6 +17,8 @@
 		D10C561023D9C3C100D745CA /* GitClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C560F23D9C3C100D745CA /* GitClientTests.swift */; };
 		D10C561B23D9C3C200D745CA /* GitClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C561A23D9C3C200D745CA /* GitClientUITests.swift */; };
 		D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */; };
+		D13664FB23DB55A000C8C477 /* GitProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13664F923DB559F00C8C477 /* GitProject.swift */; };
+		D13664FC23DB55A000C8C477 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13664FA23DB559F00C8C477 /* User.swift */; };
 		D14F082323D9C519001134A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082223D9C519001134A1 /* API.swift */; };
 		D14F082523D9C570001134A1 /* GitTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F082423D9C570001134A1 /* GitTarget.swift */; };
 		D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */; };
@@ -48,8 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D10A0ECC23D9D4FB00BE1896 /* GitProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitProject.swift; path = ../../../../../../../Downloads/codegen_5e299ce2c98a7/GitProject.swift; sourceTree = "<group>"; };
-		D10A0ECD23D9D4FB00BE1896 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../../../../../../Downloads/codegen_5e299ce2c98a7/User.swift; sourceTree = "<group>"; };
 		D10C55F223D9C3BE00D745CA /* GitClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10C55F523D9C3BE00D745CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D10C55F723D9C3BE00D745CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +64,8 @@
 		D10C561A23D9C3C200D745CA /* GitClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitClientUITests.swift; sourceTree = "<group>"; };
 		D10C561C23D9C3C200D745CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D12BD54123D9EB800057F1FB /* LoadingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
+		D13664F923DB559F00C8C477 /* GitProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitProject.swift; sourceTree = "<group>"; };
+		D13664FA23DB559F00C8C477 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D14F082223D9C519001134A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D14F082423D9C570001134A1 /* GitTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTarget.swift; sourceTree = "<group>"; };
 		D18B575A23D9D9730047B931 /* GitProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitProjectsResponse.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		D10A0EC523D9CB2C00BE1896 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				D13664F923DB559F00C8C477 /* GitProject.swift */,
+				D13664FA23DB559F00C8C477 /* User.swift */,
 				D1C3BB1A23DA392900F2009B /* Weeks.swift */,
-				D10A0ECC23D9D4FB00BE1896 /* GitProject.swift */,
-				D10A0ECD23D9D4FB00BE1896 /* User.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -366,13 +366,13 @@
 				D10C560023D9C3BE00D745CA /* GitClient.xcdatamodeld in Sources */,
 				D18E5CC723D9F5010064A822 /* ProjectViewController.swift in Sources */,
 				D18E5CCB23D9FEEE0064A822 /* ProjectViewCell.swift in Sources */,
+				D13664FC23DB55A000C8C477 /* User.swift in Sources */,
 				D14F082523D9C570001134A1 /* GitTarget.swift in Sources */,
 				D1C3BB1C23DA392900F2009B /* GitStatsContributions.swift in Sources */,
 				D1F51B8B23D9E07300D3C7CF /* TableViewHelpers.swift in Sources */,
 				D18E5CCF23DA14420064A822 /* UserViewCell.swift in Sources */,
+				D13664FB23DB55A000C8C477 /* GitProject.swift in Sources */,
 				D12BD54223D9EB800057F1FB /* LoadingViewCell.swift in Sources */,
-				D10A0ED123D9D4FB00BE1896 /* User.swift in Sources */,
-				D10A0ED023D9D4FB00BE1896 /* GitProject.swift in Sources */,
 				D18B575B23D9D9730047B931 /* GitProjectsResponse.swift in Sources */,
 				D1C3BB1D23DA392900F2009B /* Weeks.swift in Sources */,
 				D10C55F623D9C3BE00D745CA /* AppDelegate.swift in Sources */,
